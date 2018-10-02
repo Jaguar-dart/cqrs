@@ -15,12 +15,13 @@ class AccountAggregate extends Aggregate<Account> {
   Future<List<Event>> handleCommand(Command cmd, Account model) async {
     final events = <Event>[];
     if (cmd is CreateAccountCmd) {
-      model.owner = cmd.owner;
-      // TODO create event
+      if(model != null) {
+        // TODO
+      }
       return events;
     } else if (cmd is DepositCmd) {
       // TODO deposit event
-      
+
       return events;
     } else if (cmd is WithdrawCmd) {
       // TODO withdraw event
