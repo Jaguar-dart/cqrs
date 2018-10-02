@@ -1,13 +1,21 @@
 part of 'cqrs_example.dart';
 
-class Account implements AggregateModel {
-  String id;
-
-  int amount;
-
-  Account({this.id, this.amount});
-}
-
 class AccountAggregate implements Aggregate<Account> {
+  @override
+  Future<void> apply(Account model, Event<Account> event) async {
+    // TODO
+  }
 
+  @override
+  Future<List<Event>> handleCommand(Command<Account> cmd, Account model) async {
+    if (cmd is CreateAccountCmd) {
+      // TODO
+    } else if (cmd is DepositCmd) {
+      // TODO
+    } else if (cmd is WithdrawCmd) {
+      // TODO
+    } else {
+      // TODO
+    }
+  }
 }

@@ -1,4 +1,3 @@
-import 'package:cqrs/cqrs.dart';
 import 'package:test/test.dart';
 
 void main() {
