@@ -7,10 +7,12 @@ import 'package:jaguar_cqrs/definition.dart';
 /// underlying data store.
 /// Use [fetchById] to fetch a domain model by id.
 abstract class Repository<Model extends AggregateModel>
-    implements ForAggregate<Model> {
+    implements ForAggregate {
   /// Fetches model by [id]
-  Future<Model> fetchModificationEventsById(String id);
+  FutureOr<Stream<Event>> fetchEventsById(String id);
 
   /// Fetches model by [id]
-  Future<Model> saveModificationEventsById(String id);
+  FutureOr<void> saveEvents(String id, List<Event> events);
+
+  Type get modelType => Model;
 }

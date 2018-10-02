@@ -3,7 +3,9 @@ part of 'cqrs_example.dart';
 class Account implements AggregateModel {
   String id;
 
-  int amount;
+  String owner;
 
-  Account({this.id, this.amount});
+  double amount;
+
+  Account({this.id, this.owner, this.amount});
 }

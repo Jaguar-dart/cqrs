@@ -4,12 +4,16 @@ import 'package:meta/meta.dart';
 
 part 'aggregate.dart';
 part 'commands.dart';
+part 'events.dart';
 part 'model.dart';
+part 'repo.dart';
 
-Future<void> setup() async {
-  // TODO
-}
+main() async {
+  final cqrs = Cqrs()
+    ..registerAggregate(AccountAggregate())
+    ..registerRepository(AccountRepo());
 
-main() {
+  await cqrs.submitCommand(CreateAccountCmd(owner: "Teja", modelId: "1"));
+
   // TODO
 }

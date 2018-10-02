@@ -15,7 +15,7 @@ class CreateAccountCmd extends Command with ForAccount {
 class DepositCmd extends Command with ForAccount {
   final String modelId;
 
-  final int amount;
+  final double amount;
 
   DepositCmd({@required this.amount, @required this.modelId});
 }
@@ -23,7 +23,7 @@ class DepositCmd extends Command with ForAccount {
 class WithdrawCmd extends Command with ForAccount {
   final String modelId;
 
-  final int amount;
+  final double amount;
 
   WithdrawCmd({@required this.amount, @required this.modelId});
 }

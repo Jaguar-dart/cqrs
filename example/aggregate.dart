@@ -1,21 +1,32 @@
 part of 'cqrs_example.dart';
 
-class AccountAggregate implements Aggregate<Account> {
+class AccountAggregate extends Aggregate<Account> {
+  final String name = 'account';
+
   @override
-  Future<void> apply(Account model, Event<Account> event) async {
+  Account initializeModel() => Account();
+
+  @override
+  Future<void> apply(Account model, Event event) async {
     // TODO
   }
 
   @override
-  Future<List<Event>> handleCommand(Command<Account> cmd, Account model) async {
+  Future<List<Event>> handleCommand(Command cmd, Account model) async {
+    final events = <Event>[];
     if (cmd is CreateAccountCmd) {
-      // TODO
+      model.owner = cmd.owner;
+      // TODO create event
+      return events;
     } else if (cmd is DepositCmd) {
-      // TODO
+      // TODO deposit event
+      
+      return events;
     } else if (cmd is WithdrawCmd) {
-      // TODO
+      // TODO withdraw event
+      return events;
     } else {
-      // TODO
+      throw UnsupportedError(cmd.runtimeType.toString());
     }
   }
 }

@@ -1,6 +1,6 @@
 name: jaguar_cqrs
 description: Command Query Responsibility Separation (CQRS) and Event sourcing framework for Dart.
-version: 2.1.0
+version: 2.1.2
 homepage: https://github.com/Jaguar-dart/cqrs
 authors:
   - Ravi Teja Gudapati <tejainece@gmail.com>
