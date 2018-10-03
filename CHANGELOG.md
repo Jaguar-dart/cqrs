@@ -1,3 +1,4 @@
-## 1.0.0
+## 2.1.5
 
-- Initial version, created by Stagehand
++ Command results
++ Event stream
